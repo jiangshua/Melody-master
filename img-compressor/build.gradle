@@ -1,0 +1,44 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+configurations {
+    provided
+    compile.extendsFrom provided
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.0.0'
+    implementation 'com.tinify:tinify:1.3.1'
+}
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.project {
+                groupId 'com.jcode.compressor' //决定jar文件生成的目录
+                artifactId 'ImgCompressPlugin'  //模块的名称
+                version '1.0.0'  //指定版本号
+                description project.description ?:''
+                packaging 'jar'
+            }
+            //文件发布到下面目录
+            repository(url: uri('/Users/jiangshuai/Desktop/maven_repos'))
+        }
+    }
+}
+
+apply plugin: 'com.novoda.bintray-release'//添加
+publish {
+    userOrg = 'shuaijiang94'
+    groupId = 'com.jcode.compressor'
+    artifactId = 'ImgCompressPlugin'
+    publishVersion = '1.0.0'
+    desc = 'Oh hi, this is a nice description for a project, right?'
+    website = 'https://github.com/jiangshua'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

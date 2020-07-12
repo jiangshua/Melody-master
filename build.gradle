@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url uri('/Users/jiangshuai/Desktop/maven_repos/')
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+
+        classpath 'com.novoda:bintray-release:0.9'
+
+        classpath 'com.jcode.compressor:ImgCompressPlugin:1.0.0'
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+apply plugin: 'img-compressor'
+imgCompressOpt{
+    tinyKeys=["z862z2062RNqg9Tlx7x2S5DVmQZytvxp"]
+    whiteFiles=["test_pic2.png"]
+    imgFileDir=["drawable-xxhdpi","mipmap-xxxhdpi"]
+    minSize=20
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
