@@ -13,7 +13,7 @@ buildscript {
 
         classpath 'com.novoda:bintray-release:0.9'
 
-        classpath 'com.jcode.compressor:ImgCompressPlugin:1.0.0'
+        classpath 'com.jcode.compressor:ImgCompressPlugin:1.0.6'
         
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -31,9 +31,9 @@ allprojects {
 apply plugin: 'img-compressor'
 imgCompressOpt{
     tinyKeys=["z862z2062RNqg9Tlx7x2S5DVmQZytvxp"]
-    whiteFiles=["test_pic2.png"]
-    imgFileDir=["drawable-xxhdpi","mipmap-xxxhdpi"]
-    minSize=20
+    whiteFiles=["test_pic00.png"]
+    imgFileDir=["drawable-xxhdpi"]
+    minSize=1
 }
 
 task clean(type: Delete) {

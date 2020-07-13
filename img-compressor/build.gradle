@@ -20,8 +20,8 @@ uploadArchives {
             pom.project {
                 groupId 'com.jcode.compressor' //决定jar文件生成的目录
                 artifactId 'ImgCompressPlugin'  //模块的名称
-                version '1.0.0'  //指定版本号
-                description project.description ?:''
+                version '1.0.6'  //指定版本号
+                description 'Oh hi, this is a nice image compress project'
                 packaging 'jar'
             }
             //文件发布到下面目录
@@ -35,8 +35,8 @@ publish {
     userOrg = 'shuaijiang94'
     groupId = 'com.jcode.compressor'
     artifactId = 'ImgCompressPlugin'
-    publishVersion = '1.0.0'
-    desc = 'Oh hi, this is a nice description for a project, right?'
+    publishVersion = '1.0.6'
+    desc = 'Oh hi, this is a nice image compress project'
     website = 'https://github.com/jiangshua'
 }
 
